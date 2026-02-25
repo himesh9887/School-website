@@ -1,256 +1,274 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaBook, FaDesktop, FaRunning, FaUsers, FaAward, FaChalkboardTeacher, FaStar } from 'react-icons/fa';
+import {
+  FaBook,
+  FaDesktop,
+  FaRunning,
+  FaUsers,
+  FaAward,
+  FaChalkboardTeacher,
+  FaStar,
+  FaArrowRight,
+  FaCheckCircle,
+} from 'react-icons/fa';
 import SectionTitle from '../components/common/SectionTitle';
 import Counter from '../components/common/Counter';
 
 const facilities = [
-  { icon: FaChalkboardTeacher, title: 'Smart Classes', desc: 'Digital learning with interactive boards' },
-  { icon: FaDesktop, title: 'Computer Lab', desc: 'Modern computers with internet facility' },
-  { icon: FaBook, title: 'Library', desc: '5000+ books and digital resources' },
-  { icon: FaRunning, title: 'Sports Ground', desc: 'Spacious ground for all sports activities' },
+  { icon: FaChalkboardTeacher, title: 'Smart Classrooms', desc: 'Interactive digital boards and visual-first learning environment.' },
+  { icon: FaDesktop, title: 'Computer Lab', desc: 'Updated systems with guided coding and practical sessions.' },
+  { icon: FaBook, title: 'Modern Library', desc: 'Academic and story collections with quiet reading zones.' },
+  { icon: FaRunning, title: 'Sports Arena', desc: 'Daily sports activities for fitness and team building.' },
 ];
 
-const whyChooseUs = [
-  { icon: FaUsers, title: 'Individual Attention', desc: 'Small class sizes for personalized learning' },
-  { icon: FaAward, title: 'Academic Excellence', desc: 'Consistent 100% board results' },
-  { icon: FaStar, title: 'Holistic Development', desc: 'Focus on academics, sports & arts' },
+const highlights = [
+  { icon: FaUsers, title: 'Individual Attention', desc: 'Small batches help teachers focus on every child.' },
+  { icon: FaAward, title: 'Excellent Results', desc: 'Strong board outcomes with concept-based preparation.' },
+  { icon: FaStar, title: 'Overall Growth', desc: 'Academics, confidence, communication and leadership.' },
 ];
 
 const testimonials = [
-  { name: 'Priya Sharma', role: 'Parent', text: 'Best school in the city. My child has shown tremendous improvement in academics and confidence.' },
-  { name: 'Rajesh Kumar', role: 'Parent', text: 'Excellent faculty and modern facilities. Highly recommended for quality education.' },
-  { name: 'Anita Patel', role: 'Parent', text: 'The school focuses on overall development. My daughter loves going to school every day.' },
+  { name: 'Priya Sharma', role: 'Parent', text: 'Teachers are supportive and the school atmosphere is very positive for learning.' },
+  { name: 'Rajesh Kumar', role: 'Parent', text: 'The quality of education and discipline has improved my child’s confidence a lot.' },
+  { name: 'Anita Patel', role: 'Parent', text: 'Balanced focus on studies and activities. My daughter enjoys coming to school.' },
 ];
+
+const stats = [
+  { number: 500, suffix: '+', label: 'Students' },
+  { number: 20, suffix: '+', label: 'Qualified Teachers' },
+  { number: 10, suffix: '+', label: 'Years of Trust' },
+  { number: 100, suffix: '%', label: 'Board Success' },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 25 },
+  show: { opacity: 1, y: 0 },
+};
 
 export default function Home() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      {/* Hero Section */}
-      <section className="relative h-[600px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="container-custom relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl text-white"
-          >
-            <span className="inline-block bg-[#3B82F6] text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">
+      <section className="relative overflow-hidden bg-[#0f244a] pt-16 pb-12 text-white md:pt-20 md:pb-14">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=2000')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1d3d]/95 via-[#123063]/85 to-[#1f4ea3]/80" />
+        <div className="container-custom relative z-10 grid gap-8 lg:grid-cols-2 lg:items-center">
+          <motion.div initial="hidden" animate="show" variants={fadeUp} transition={{ duration: 0.7 }}>
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-blue-100">
               Admissions Open 2026-27
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Shaping Future Leaders Through Quality Education
+            <h1 className="mb-4 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              A Better Learning Experience For Every Child
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-200">
-              Excellence School provides a nurturing environment where every child discovers their potential and achieves academic excellence.
+            <p className="mb-6 max-w-xl text-base text-blue-100 sm:text-lg">
+              Excellence School blends modern teaching, strong values, and personal attention so
+              students grow confidently in academics and life.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/admission" className="gradient-btn inline-block">Apply Now</Link>
-              <Link to="/contact" className="bg-white text-[#1E3A8A] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 inline-block">
-                Contact Us
+            <div className="flex flex-wrap items-center gap-4">
+              <Link to="/admission" className="gradient-btn">
+                Apply Now <FaArrowRight className="text-xs" />
               </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-xl border border-white/50 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#123063]"
+              >
+                Contact School
+              </Link>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="rounded-2xl border border-white/25 bg-white/10 p-5 backdrop-blur-sm sm:p-7"
+          >
+            <p className="mb-5 text-lg font-semibold text-blue-100">Why Parents Trust Us</p>
+            <div className="space-y-4">
+              {[
+                'Experienced faculty with friendly mentorship',
+                'Safe campus with disciplined environment',
+                'Regular parent communication and progress tracking',
+                'Balanced focus on academics and activities',
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3 rounded-xl bg-white/10 p-3">
+                  <FaCheckCircle className="mt-0.5 text-blue-200" />
+                  <p className="text-sm text-blue-50">{item}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* About Preview */}
-      <section className="section-padding bg-white">
+      <section className="relative z-20 mt-6 pb-8 sm:mt-8 sm:pb-10">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
-                <img 
-                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800" 
-                  alt="School Building" 
-                  className="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-[#1E3A8A] text-white p-6 rounded-xl shadow-xl hidden md:block">
-                <p className="text-3xl font-bold">10+</p>
-                <p className="text-sm">Years of Excellence</p>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A8A] mb-4">Welcome to Excellence School</h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                Founded in 2016, Excellence School has been a beacon of quality education in the region. We believe in nurturing young minds through a blend of traditional values and modern teaching methodologies.
-              </p>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Our state-of-the-art campus, experienced faculty, and comprehensive curriculum ensure that every student receives the best education possible. We focus not just on academic excellence but also on character building and extracurricular development.
-              </p>
-              <Link to="/about" className="gradient-btn inline-block">Read More About Us</Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Facilities */}
-      <section className="section-padding bg-[#F3F4F6]">
-        <div className="container-custom">
-          <SectionTitle 
-            title="Our Facilities" 
-            subtitle="World-class infrastructure designed to provide the best learning environment for our students"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {facilities.map((facility, idx) => (
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat, idx) => (
               <motion.div
-                key={idx}
+                key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                transition={{ delay: idx * 0.08 }}
+                className="rounded-2xl border border-blue-100 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#1E3A8A] transition-colors">
-                  <facility.icon className="text-2xl text-[#1E3A8A] group-hover:text-white transition-colors" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1E3A8A] mb-2">{facility.title}</h3>
-                <p className="text-gray-600 text-sm">{facility.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <SectionTitle 
-            title="Why Choose Us" 
-            subtitle="Discover what makes Excellence School the preferred choice for quality education"
-          />
-          <div className="grid md:grid-cols-3 gap-8">
-            {whyChooseUs.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
-                className="text-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="text-2xl text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1E3A8A] mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Statistics */}
-      <section className="section-padding bg-[#1E3A8A] text-white">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: 500, suffix: '+', label: 'Students' },
-              { number: 20, suffix: '+', label: 'Teachers' },
-              { number: 10, suffix: '+', label: 'Years Experience' },
-              { number: 100, suffix: '%', label: 'Results' },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="text-center"
-              >
-                <p className="text-4xl md:text-5xl font-bold mb-2 text-[#60A5FA]">
+                <p className="mb-1 text-3xl font-bold text-[#123063] sm:text-4xl">
                   <Counter end={stat.number} suffix={stat.suffix} />
                 </p>
-                <p className="text-blue-200">{stat.label}</p>
+                <p className="text-sm text-slate-600">{stat.label}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-padding bg-[#F3F4F6]">
+      <section className="section-padding bg-white">
         <div className="container-custom">
-          <SectionTitle title="What Parents Say" subtitle="Testimonials from our school community" />
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, idx) => (
-              <motion.div
-                key={idx}
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, x: -35 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="group overflow-hidden rounded-2xl shadow-xl">
+                <img
+                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900"
+                  alt="Students in classroom"
+                  className="h-[350px] w-full object-cover transition-transform duration-700 group-hover:scale-110 sm:h-[420px]"
+                />
+              </div>
+              <div className="absolute -bottom-5 -right-2 hidden rounded-xl bg-[#123063] px-5 py-4 text-white shadow-lg sm:block">
+                <p className="text-2xl font-bold">10+ Years</p>
+                <p className="text-xs text-blue-100">of educational excellence</p>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 35 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="mb-4 text-3xl font-bold text-[#123063] sm:text-4xl">
+                Welcome to Excellence School
+              </h2>
+              <p className="mb-4 leading-relaxed text-slate-600">
+                Since 2016, we have built a student-first learning culture with strong academics,
+                discipline, and future-ready skills.
+              </p>
+              <p className="mb-6 leading-relaxed text-slate-600">
+                Our mission is simple: create confident learners through practical teaching,
+                supportive mentoring, and a safe school environment.
+              </p>
+              <Link to="/about" className="gradient-btn">
+                Explore About Us
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-[#f2f7ff]">
+        <div className="container-custom">
+          <SectionTitle
+            title="Our Facilities"
+            subtitle="Modern infrastructure designed for better learning, creativity, and confidence."
+          />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {facilities.map((facility, idx) => (
+              <motion.article
+                key={facility.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-md"
+                transition={{ delay: idx * 0.08 }}
+                className="group rounded-2xl border border-blue-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(5)].map((_, i) => <FaStar key={i} />)}
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-100 transition-colors duration-300 group-hover:bg-[#123063]">
+                  <facility.icon className="text-2xl text-[#123063] transition-colors duration-300 group-hover:text-white" />
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-bold text-[#1E3A8A]">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
-                </div>
-              </motion.div>
+                <h3 className="mb-2 text-xl font-bold text-[#123063]">{facility.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-600">{facility.desc}</p>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Gallery Preview */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <SectionTitle title="Campus Gallery" subtitle="Glimpses of our vibrant school life" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((item) => (
+          <SectionTitle
+            title="Why Choose Us"
+            subtitle="We focus on academic quality and complete personality development."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {highlights.map((item, idx) => (
               <motion.div
-                key={item}
-                initial={{ opacity: 0, scale: 0.9 }}
+                key={item.title}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative overflow-hidden rounded-xl group cursor-pointer"
+                transition={{ delay: idx * 0.1 }}
+                className="rounded-2xl border border-slate-200 bg-gradient-to-b from-white to-blue-50 p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <img 
-                  src={`https://images.unsplash.com/photo-${item === 1 ? '1503676260728-1c00da094a0b' : item === 2 ? '1497633762265-9d179a990aa6' : item === 3 ? '1524178232363-1fb2b075b655' : '1427504744581-f367f707a811'}?w=400`} 
-                  alt={`Gallery ${item}`}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#123063] to-[#2e63be]">
+                  <item.icon className="text-2xl text-white" />
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-[#123063]">{item.title}</h3>
+                <p className="text-slate-600">{item.desc}</p>
               </motion.div>
             ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link to="/gallery" className="gradient-btn inline-block">View All Photos</Link>
           </div>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-20 bg-gradient-to-r from-[#1E3A8A] to-[#3B82F6]">
-        <div className="container-custom text-center text-white">
+      <section className="section-padding bg-[#f2f7ff]">
+        <div className="container-custom">
+          <SectionTitle title="What Parents Say" subtitle="Feedback from our trusted school community" />
+          <div className="grid gap-6 md:grid-cols-3">
+            {testimonials.map((testimonial, idx) => (
+              <motion.div
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.08 }}
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="mb-4 flex gap-1 text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} />
+                  ))}
+                </div>
+                <p className="mb-4 italic text-slate-600">"{testimonial.text}"</p>
+                <p className="font-bold text-[#123063]">{testimonial.name}</p>
+                <p className="text-sm text-slate-500">{testimonial.role}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="overflow-hidden rounded-3xl bg-gradient-to-r from-[#10244a] via-[#123063] to-[#2e63be] px-6 py-12 text-center text-white sm:px-10"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Admissions Open for 2026-27</h2>
-            <p className="text-xl mb-8 text-blue-100">Limited seats available. Enroll your child today for a brighter tomorrow.</p>
-            <Link to="/admission" className="bg-white text-[#1E3A8A] px-8 py-4 rounded-lg font-bold text-lg hover:scale-105 transition-transform inline-block">
-              Apply Now
-            </Link>
+            <h2 className="mb-3 text-3xl font-bold sm:text-4xl">Admissions Open For 2026-27</h2>
+            <p className="mx-auto mb-8 max-w-2xl text-blue-100">
+              Book a campus visit and explore our classrooms, teaching team, and student support
+              programs.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/admission" className="rounded-xl bg-white px-7 py-3 font-bold text-[#123063] transition-transform duration-300 hover:-translate-y-1">
+                Start Admission
+              </Link>
+              <Link to="/contact" className="rounded-xl border border-white/60 px-7 py-3 font-semibold text-white transition-colors duration-300 hover:bg-white hover:text-[#123063]">
+                Schedule Visit
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionTitle from '../components/common/SectionTitle';
+import PageHeader from '../components/common/PageHeader';
 
 const categories = ['All', 'Events', 'Sports', 'Classroom', 'Annual Function'];
 
@@ -24,12 +25,10 @@ export default function Gallery() {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <div className="bg-[#1E3A8A] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Gallery</h1>
-          <p className="text-blue-200">Capturing moments of learning and joy</p>
-        </div>
-      </div>
+      <PageHeader
+        title="Gallery"
+        subtitle="Capturing moments of learning, teamwork, creativity, and campus life."
+      />
 
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -63,7 +62,7 @@ export default function Gallery() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
-                  className="relative group overflow-hidden rounded-xl cursor-pointer"
+                  className="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
                   <img 
                     src={image.src} 

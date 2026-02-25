@@ -1,11 +1,3 @@
-import React from 'react'
-
-const Card = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function Card({ children, className = '' }) {
+  return <div className={`panel hover-lift p-6 ${className}`}>{children}</div>;
 }
-
-export default Card

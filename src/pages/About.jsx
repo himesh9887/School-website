@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/common/SectionTitle';
 import { FaQuoteLeft } from 'react-icons/fa';
+import PageHeader from '../components/common/PageHeader';
 
 const management = [
   { name: 'Dr. Rajesh Kumar', role: 'Chairman', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300' },
@@ -12,13 +13,10 @@ const management = [
 export default function About() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      {/* Banner */}
-      <div className="bg-[#1E3A8A] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-          <p className="text-blue-200">Learn about our journey, vision, and commitment to excellence</p>
-        </div>
-      </div>
+      <PageHeader
+        title="About Us"
+        subtitle="Learn about our journey, values, and long-term commitment to quality education."
+      />
 
       {/* History */}
       <section className="section-padding bg-white">
@@ -38,7 +36,7 @@ export default function About() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="section-padding bg-[#F3F4F6]">
+      <section className="section-padding soft-grid bg-[#F3F4F6]">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div 
@@ -110,7 +108,7 @@ export default function About() {
       </section>
 
       {/* Management Team */}
-      <section className="section-padding bg-[#F3F4F6]">
+      <section className="section-padding soft-grid bg-[#F3F4F6]">
         <div className="container-custom">
           <SectionTitle title="Management Team" subtitle="Meet our dedicated leadership team" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

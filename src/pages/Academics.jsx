@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/common/SectionTitle';
 import { FaCheck } from 'react-icons/fa';
+import PageHeader from '../components/common/PageHeader';
 
 const classes = [
   { level: 'Pre-Primary', grades: 'Nursery to KG', age: '3-5 years', description: 'Play-way method focusing on motor skills and basic concepts' },
@@ -18,18 +19,15 @@ const subjects = [
 export default function Academics() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <div className="bg-[#1E3A8A] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Academics</h1>
-          <p className="text-blue-200">Comprehensive curriculum designed for holistic development</p>
-        </div>
-      </div>
+      <PageHeader
+        title="Academics"
+        subtitle="Comprehensive curriculum designed for conceptual learning and holistic development."
+      />
 
-      {/* Classes Offered */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <SectionTitle title="Classes Offered" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {classes.map((cls, idx) => (
               <motion.div
                 key={idx}
@@ -37,25 +35,24 @@ export default function Academics() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-100 hover:shadow-xl transition-shadow"
+                className="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <h3 className="text-xl font-bold text-[#1E3A8A] mb-2">{cls.level}</h3>
-                <p className="text-[#3B82F6] font-semibold mb-2">{cls.grades}</p>
-                <p className="text-sm text-gray-500 mb-3">Age: {cls.age}</p>
-                <p className="text-gray-600 text-sm">{cls.description}</p>
+                <h3 className="mb-2 text-xl font-bold text-[#123063]">{cls.level}</h3>
+                <p className="mb-2 font-semibold text-[#2e63be]">{cls.grades}</p>
+                <p className="mb-3 text-sm text-slate-500">Age: {cls.age}</p>
+                <p className="text-sm text-slate-600">{cls.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Curriculum */}
-      <section className="section-padding bg-[#F3F4F6]">
+      <section className="section-padding soft-grid bg-[#F3F4F6]">
         <div className="container-custom">
           <SectionTitle title="Curriculum Details" />
-          <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-            <table className="w-full">
-              <thead className="bg-[#1E3A8A] text-white">
+          <div className="overflow-x-auto rounded-2xl bg-white shadow-md">
+            <table className="w-full min-w-[560px]">
+              <thead className="bg-[#123063] text-white">
                 <tr>
                   <th className="px-6 py-4 text-left">Class</th>
                   <th className="px-6 py-4 text-left">Subjects Offered</th>
@@ -63,9 +60,9 @@ export default function Academics() {
               </thead>
               <tbody>
                 {subjects.map((row, idx) => (
-                  <tr key={idx} className="border-b hover:bg-blue-50">
-                    <td className="px-6 py-4 font-semibold text-[#1E3A8A]">{row.class}</td>
-                    <td className="px-6 py-4 text-gray-600">{row.subjects}</td>
+                  <tr key={idx} className="border-b transition-colors hover:bg-blue-50">
+                    <td className="px-6 py-4 font-semibold text-[#123063]">{row.class}</td>
+                    <td className="px-6 py-4 text-slate-600">{row.subjects}</td>
                   </tr>
                 ))}
               </tbody>
@@ -74,11 +71,10 @@ export default function Academics() {
         </div>
       </section>
 
-      {/* Teaching Method */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <SectionTitle title="Teaching Methodology" />
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-5 md:grid-cols-2">
             {[
               'Interactive Smart Classes',
               'Experiential Learning',
@@ -92,24 +88,23 @@ export default function Academics() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="flex items-center space-x-4 p-4 bg-blue-50 rounded-xl"
+                transition={{ delay: idx * 0.08 }}
+                className="flex items-center gap-4 rounded-xl bg-blue-50 p-4 transition-all duration-300 hover:bg-blue-100"
               >
-                <div className="w-10 h-10 bg-[#1E3A8A] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#123063]">
                   <FaCheck className="text-white" />
                 </div>
-                <span className="font-medium text-gray-800">{method}</span>
+                <span className="font-medium text-slate-800">{method}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Examination Pattern */}
-      <section className="section-padding bg-[#F3F4F6]">
+      <section className="section-padding soft-grid bg-[#F3F4F6]">
         <div className="container-custom">
           <SectionTitle title="Examination Pattern" />
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid gap-6 md:grid-cols-3">
             {[
               { title: 'Unit Tests', desc: 'Monthly assessments to track progress' },
               { title: 'Half-Yearly', desc: 'Comprehensive mid-term examination' },
@@ -117,14 +112,14 @@ export default function Academics() {
             ].map((exam, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.92 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-md text-center"
+                className="rounded-2xl border border-slate-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <h4 className="text-xl font-bold text-[#1E3A8A] mb-2">{exam.title}</h4>
-                <p className="text-gray-600">{exam.desc}</p>
+                <h4 className="mb-2 text-xl font-bold text-[#123063]">{exam.title}</h4>
+                <p className="text-slate-600">{exam.desc}</p>
               </motion.div>
             ))}
           </div>
