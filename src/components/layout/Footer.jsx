@@ -21,9 +21,11 @@ const quickLinks = [
   { label: 'Contact', path: '/contact' },
 ];
 
-export default function Footer() {
+export default function Footer({ theme }) {
+  const isDark = theme === 'dark';
+
   return (
-    <footer className="mt-16 overflow-hidden bg-[#081225] text-white">
+    <footer className={`mt-16 overflow-hidden text-white ${isDark ? 'bg-[#040913]' : 'bg-[#081225]'}`}>
       <div className="container-custom relative">
         <div className="relative z-10 -translate-y-10 rounded-[2rem] bg-gradient-to-r from-[#11224d] via-[#2450a4] to-[#f97316] px-6 py-8 shadow-2xl md:px-10">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">

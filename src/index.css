@@ -38,6 +38,14 @@ body {
     linear-gradient(180deg, #f8fbff 0%, #ffffff 28%, #f3f8ff 100%);
 }
 
+html[data-theme="dark"] body {
+  color: #e5eefc;
+  background:
+    radial-gradient(circle at top left, rgba(36, 80, 164, 0.18), transparent 28%),
+    radial-gradient(circle at right 20%, rgba(249, 115, 22, 0.12), transparent 24%),
+    linear-gradient(180deg, #040913 0%, #07101f 30%, #091527 100%);
+}
+
 a {
   text-decoration: none;
 }
@@ -135,6 +143,50 @@ textarea {
   backdrop-filter: blur(12px);
 }
 
+.premium-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08)),
+    rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 70px rgba(7, 14, 33, 0.28);
+  backdrop-filter: blur(22px);
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  inset: auto -20% -40% auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.24), transparent 68%);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 0.95rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(239, 246, 255, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+.info-strip {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(12px);
+}
+
 .glass-panel {
   border: 1px solid rgba(255, 255, 255, 0.22);
   background: rgba(255, 255, 255, 0.12);
@@ -194,6 +246,10 @@ textarea {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent);
 }
 
+.theme-dark .section-shell::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -231,6 +287,52 @@ textarea {
   background: rgba(255, 255, 255, 0.08);
   padding: 1rem;
   backdrop-filter: blur(14px);
+}
+
+.theme-dark .surface-card,
+.theme-dark .info-strip {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(8, 18, 37, 0.78);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+}
+
+.theme-dark .secondary-btn {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #e5eefc;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.theme-dark .secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .eyebrow {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  color: #c6d6f7;
+}
+
+.theme-dark .field {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f8fbff;
+}
+
+.theme-dark .field::placeholder {
+  color: rgba(226, 232, 240, 0.62);
+}
+
+.theme-dark .soft-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.theme-dark .page-hero {
+  background:
+    radial-gradient(circle at top left, rgba(251, 146, 60, 0.18), transparent 20%),
+    radial-gradient(circle at 80% 30%, rgba(52, 211, 153, 0.12), transparent 18%),
+    linear-gradient(135deg, #050b18 0%, #081225 45%, #163570 100%);
 }
 
 @media (max-width: 768px) {
