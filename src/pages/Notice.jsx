@@ -15,7 +15,7 @@ export default function Notice() {
       <section className="section-shell section-padding soft-grid bg-[#eef5ff]">
         <div className="container-custom">
           <SectionTitle title="Latest Notices" />
-          <div className="mx-auto grid max-w-4xl gap-6">
+          <div className="mx-auto grid max-w-4xl gap-4 sm:gap-6">
             {noticeData.map((notice, idx) => (
               <motion.div
                 key={notice.id}
@@ -23,7 +23,7 @@ export default function Notice() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className={`surface-card border-l-4 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                className={`surface-card border-l-4 p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                   notice.important ? 'border-red-500' : 'border-[#2e63be]'
                 }`}
               >
@@ -47,7 +47,7 @@ export default function Notice() {
                     </div>
                     <p className="text-slate-600">{notice.desc}</p>
                   </div>
-                  <button className="inline-flex items-center gap-2 rounded-lg bg-blue-50 px-4 py-2 font-medium text-[#123063] transition-all duration-300 hover:bg-[#123063] hover:text-white">
+                  <button className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-blue-50 px-4 py-2 font-medium text-[#123063] transition-all duration-300 hover:bg-[#123063] hover:text-white md:w-auto">
                     <FaFilePdf />
                     <span>Download</span>
                     <FaDownload className="text-xs" />

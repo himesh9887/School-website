@@ -75,7 +75,7 @@ const fadeUp = {
 export default function Home() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <section className="relative overflow-hidden pb-18 pt-10 text-white md:pb-28 md:pt-16">
+      <section className="relative overflow-hidden pb-14 pt-8 text-white md:pb-28 md:pt-16">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=2000')] bg-cover bg-center opacity-20" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(251,146,60,0.14),_transparent_22%),linear-gradient(135deg,_rgba(9,20,45,1)_0%,_rgba(17,34,77,0.96)_38%,_rgba(36,80,164,0.94)_100%)]" />
         <div className="absolute left-0 right-0 top-0 h-px bg-white/20" />
@@ -84,23 +84,23 @@ export default function Home() {
             <span className="hero-badge mb-5">
               Admissions Open 2026-27
             </span>
-            <h1 className="mb-5 max-w-3xl text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-7xl">
+            <h1 className="mb-5 max-w-3xl text-[2.25rem] font-bold leading-[1.05] sm:text-5xl lg:text-7xl">
               Professional school experience with modern learning, trust, and strong academic growth.
             </h1>
-            <p className="mb-8 max-w-2xl text-base leading-8 text-blue-100 sm:text-lg">
+            <p className="mb-7 max-w-2xl text-[15px] leading-7 text-blue-100 sm:text-lg sm:leading-8">
               Excellence School combines modern teaching methods, personal mentoring, and a disciplined
               campus environment so every child grows in academics, confidence, and real-world readiness.
             </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <Link to="/admission" className="gradient-btn">
+            <div className="grid gap-3 sm:flex sm:flex-wrap sm:items-center">
+              <Link to="/admission" className="gradient-btn w-full sm:w-auto">
                 Apply Now <FaArrowRight className="text-xs" />
               </Link>
-              <Link to="/contact" className="secondary-btn border-white/30 bg-white/12 px-6 py-3 text-white">
+              <Link to="/contact" className="secondary-btn w-full border-white/30 bg-white/12 px-6 py-3 text-white sm:w-auto">
                 Contact School
               </Link>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <div className="mt-8 grid gap-3 sm:grid-cols-3 sm:gap-4">
               {[
                 ['Smart Campus', 'Digital classrooms, library, labs, and guided activities'],
                 ['Parent Connect', 'Regular updates, PTM schedule, and transparent communication'],
@@ -113,7 +113,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 sm:gap-4">
               {quickPoints.map((item) => (
                 <div key={item.title} className="rounded-[1.4rem] border border-white/12 bg-white/8 p-4 backdrop-blur-md">
                   <item.icon className="text-xl text-orange-300" />
@@ -128,39 +128,39 @@ export default function Home() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="premium-card p-5 sm:p-7"
+            className="premium-card p-4 sm:p-7"
           >
-            <div className="overflow-hidden rounded-[1.6rem] bg-white text-slate-900 shadow-2xl">
+            <div className="overflow-hidden rounded-[1.35rem] bg-white text-slate-900 shadow-2xl sm:rounded-[1.6rem]">
               <div className="relative">
                 <img
                   src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200"
                   alt="Students in a modern classroom"
-                  className="h-64 w-full object-cover sm:h-72"
+                  className="h-56 w-full object-cover sm:h-72"
                 />
-                <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 rounded-[1.25rem] border border-white/30 bg-[#0b1530]/72 px-4 py-3 backdrop-blur-md">
+                <div className="absolute inset-x-3 bottom-3 rounded-[1.1rem] border border-white/30 bg-[#0b1530]/72 px-3 py-3 backdrop-blur-md sm:inset-x-4 sm:bottom-4 sm:flex sm:items-center sm:justify-between sm:gap-3 sm:rounded-[1.25rem] sm:px-4">
                   <div>
                     <p className="text-xs uppercase tracking-[0.22em] text-blue-200">Live Campus Insight</p>
                     <p className="mt-1 text-sm font-semibold text-white">Future-ready classrooms with active mentoring</p>
                   </div>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-white/12 px-3 py-2 text-sm font-semibold text-white">
+                  <span className="mt-3 inline-flex items-center gap-2 rounded-full bg-white/12 px-3 py-2 text-sm font-semibold text-white sm:mt-0">
                     <FaPlayCircle /> Tour
                   </span>
                 </div>
               </div>
-              <div className="p-6 sm:p-7">
-                <div className="flex flex-wrap items-start justify-between gap-4">
+              <div className="p-4 sm:p-7">
+                <div className="flex flex-col items-start gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#2450a4]">
                       Why parents choose us
                     </p>
                     <h2 className="mt-2 text-2xl font-bold text-[#11224d]">Designed for trust and strong outcomes</h2>
                   </div>
-                  <div className="rounded-2xl bg-orange-50 px-4 py-3 text-right">
+                  <div className="rounded-2xl bg-orange-50 px-4 py-3 text-left sm:text-right">
                     <p className="text-xs uppercase tracking-[0.18em] text-orange-500">Board Result</p>
                     <p className="mt-1 text-2xl font-bold text-[#11224d]">100%</p>
                   </div>
                 </div>
-                <div className="mt-6 grid gap-4">
+                <div className="mt-5 grid gap-3 sm:mt-6 sm:gap-4">
                   {[
                     'Experienced faculty with friendly mentorship',
                     'Safe campus with disciplined environment',
@@ -173,7 +173,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                <div className="mt-5 grid grid-cols-3 gap-2 sm:mt-6 sm:gap-3">
                   {[
                     ['500+', 'Students'],
                     ['20+', 'Faculty'],
@@ -191,9 +191,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-20 -mt-10 pb-8 sm:-mt-12 sm:pb-12">
+      <section className="relative z-20 -mt-7 pb-8 sm:-mt-12 sm:pb-12">
         <div className="container-custom">
-          <div className="info-strip grid gap-5 p-5 sm:grid-cols-2 md:p-6 lg:grid-cols-4">
+          <div className="info-strip grid gap-3 p-3 sm:grid-cols-2 sm:gap-5 sm:p-5 md:p-6 lg:grid-cols-4">
             {stats.map((stat, idx) => (
               <motion.div
                 key={stat.label}
@@ -201,7 +201,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className="rounded-[1.5rem] border border-slate-100 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-[1.25rem] border border-slate-100 bg-white p-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:rounded-[1.5rem] sm:p-5"
               >
                 <p className="mb-1 text-3xl font-bold text-[#11224d] sm:text-4xl">
                   <Counter end={stat.number} suffix={stat.suffix} />
@@ -215,14 +215,14 @@ export default function Home() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10">
             <motion.div
               initial={{ opacity: 0, x: -35 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="group overflow-hidden rounded-[2rem] shadow-2xl">
+              <div className="group overflow-hidden rounded-[1.5rem] shadow-2xl sm:rounded-[2rem]">
                 <img
                   src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900"
                   alt="Students in classroom"
@@ -241,7 +241,7 @@ export default function Home() {
               viewport={{ once: true }}
             >
               <span className="eyebrow">About Our Campus</span>
-              <h2 className="mb-4 mt-5 text-3xl font-bold text-[#11224d] sm:text-5xl">
+              <h2 className="mb-4 mt-5 text-[2rem] font-bold text-[#11224d] sm:text-5xl">
                 Welcome to Excellence School
               </h2>
               <p className="mb-4 leading-8 text-slate-600">
@@ -275,7 +275,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <Link to="/about" className="gradient-btn mt-8">
+              <Link to="/about" className="gradient-btn mt-8 w-full sm:w-auto">
                 Explore About Us
               </Link>
             </motion.div>
@@ -344,10 +344,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="rounded-[2rem] bg-gradient-to-br from-[#0b1530] via-[#123063] to-[#2450a4] p-8 text-white shadow-2xl"
+              className="rounded-[1.5rem] bg-gradient-to-br from-[#0b1530] via-[#123063] to-[#2450a4] p-5 text-white shadow-2xl sm:rounded-[2rem] sm:p-8"
             >
               <span className="hero-badge">School Promise</span>
-              <h2 className="mt-5 text-3xl font-bold sm:text-4xl">
+              <h2 className="mt-5 text-[2rem] font-bold sm:text-4xl">
                 A learning environment built for confidence, discipline, and consistent results.
               </h2>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-blue-100 sm:text-base">
@@ -373,7 +373,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="grid gap-5 md:grid-cols-2"
+              className="grid gap-4 md:grid-cols-2 md:gap-5"
             >
               {[
                 ['Academic Planning', 'Clear schedules, unit tests, and concept revision support.'],
@@ -381,7 +381,7 @@ export default function Home() {
                 ['Confidence Building', 'Communication, leadership, and classroom participation.'],
                 ['Activity Balance', 'Sports, clubs, celebrations, and personality development.'],
               ].map(([title, desc]) => (
-                <div key={title} className="surface-card p-6">
+                <div key={title} className="surface-card p-5 sm:p-6">
                   <FaQuoteLeft className="text-lg text-orange-400" />
                   <h3 className="mt-4 text-xl font-bold text-[#11224d]">{title}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{desc}</p>
@@ -406,7 +406,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className="surface-card relative overflow-hidden p-7"
+                className="surface-card relative overflow-hidden p-5 sm:p-7"
               >
                 <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-orange-100/70 blur-2xl" />
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#2450a4]">
@@ -453,18 +453,18 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="overflow-hidden rounded-[2rem] bg-gradient-to-r from-[#0b1530] via-[#123063] to-[#3970d7] px-6 py-12 text-center text-white sm:px-10"
+            className="overflow-hidden rounded-[1.5rem] bg-gradient-to-r from-[#0b1530] via-[#123063] to-[#3970d7] px-5 py-10 text-center text-white sm:rounded-[2rem] sm:px-10 sm:py-12"
           >
             <h2 className="mb-3 text-3xl font-bold sm:text-4xl">Admissions Open For 2026-27</h2>
             <p className="mx-auto mb-8 max-w-2xl text-blue-100">
               Book a campus visit and explore our classrooms, teaching team, and student support
               programs.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/admission" className="rounded-full bg-white px-7 py-3 font-bold text-[#123063] transition-transform duration-300 hover:-translate-y-1">
+            <div className="grid gap-3 sm:flex sm:flex-wrap sm:justify-center sm:gap-4">
+              <Link to="/admission" className="rounded-full bg-white px-7 py-3 text-center font-bold text-[#123063] transition-transform duration-300 hover:-translate-y-1">
                 Start Admission
               </Link>
-              <Link to="/contact" className="rounded-full border border-white/60 px-7 py-3 font-semibold text-white transition-colors duration-300 hover:bg-white hover:text-[#123063]">
+              <Link to="/contact" className="rounded-full border border-white/60 px-7 py-3 text-center font-semibold text-white transition-colors duration-300 hover:bg-white hover:text-[#123063]">
                 Schedule Visit
               </Link>
             </div>

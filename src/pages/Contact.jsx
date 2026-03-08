@@ -21,9 +21,9 @@ export default function Contact() {
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h3 className="mb-8 text-3xl font-bold text-[#11224d]">Contact Information</h3>
+              <h3 className="mb-6 text-[2rem] font-bold text-[#11224d] sm:mb-8 sm:text-3xl">Contact Information</h3>
               <div className="space-y-6">
                 <div className="surface-card flex items-start gap-4 p-4 transition-colors hover:bg-blue-50">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-[#123063]">
@@ -68,7 +68,7 @@ export default function Contact() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h3 className="mb-8 text-3xl font-bold text-[#11224d]">Send us a Message</h3>
+              <h3 className="mb-6 text-[2rem] font-bold text-[#11224d] sm:mb-8 sm:text-3xl">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="surface-card p-6 md:p-8">
                 <div className="space-y-4">
                   <div>
@@ -109,15 +109,15 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          <div className="surface-card mt-16 overflow-hidden rounded-[2rem]">
+          <div className="surface-card mt-12 overflow-hidden rounded-[1.5rem] sm:mt-16 sm:rounded-[2rem]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.1234567890123!2d77.12345678901234!3d28.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDA3JzI0LjQiTiA3N8KwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
               width="100%"
-              height="380"
+              height="320"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
-              className="w-full"
+              className="w-full sm:h-[380px]"
             />
           </div>
         </div>
