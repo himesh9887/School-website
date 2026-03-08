@@ -24,7 +24,7 @@ export default function Academics() {
         subtitle="Comprehensive curriculum designed for conceptual learning and holistic development."
       />
 
-      <section className="section-padding bg-white">
+      <section className="section-padding">
         <div className="container-custom">
           <SectionTitle title="Classes Offered" />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -35,9 +35,9 @@ export default function Academics() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="surface-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <h3 className="mb-2 text-xl font-bold text-[#123063]">{cls.level}</h3>
+                <h3 className="mb-2 text-xl font-bold text-[#11224d]">{cls.level}</h3>
                 <p className="mb-2 font-semibold text-[#2e63be]">{cls.grades}</p>
                 <p className="mb-3 text-sm text-slate-500">Age: {cls.age}</p>
                 <p className="text-sm text-slate-600">{cls.description}</p>
@@ -47,10 +47,10 @@ export default function Academics() {
         </div>
       </section>
 
-      <section className="section-padding soft-grid bg-[#F3F4F6]">
+      <section className="section-shell section-padding soft-grid bg-[#eef5ff]">
         <div className="container-custom">
           <SectionTitle title="Curriculum Details" />
-          <div className="overflow-x-auto rounded-2xl bg-white shadow-md">
+          <div className="surface-card overflow-x-auto">
             <table className="w-full min-w-[560px]">
               <thead className="bg-[#123063] text-white">
                 <tr>
@@ -71,7 +71,7 @@ export default function Academics() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      <section className="section-padding">
         <div className="container-custom">
           <SectionTitle title="Teaching Methodology" />
           <div className="grid gap-5 md:grid-cols-2">
@@ -89,7 +89,7 @@ export default function Academics() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className="flex items-center gap-4 rounded-xl bg-blue-50 p-4 transition-all duration-300 hover:bg-blue-100"
+                className="surface-card flex items-center gap-4 p-4 transition-all duration-300 hover:bg-blue-50"
               >
                 <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#123063]">
                   <FaCheck className="text-white" />
@@ -101,7 +101,7 @@ export default function Academics() {
         </div>
       </section>
 
-      <section className="section-padding soft-grid bg-[#F3F4F6]">
+      <section className="section-shell section-padding soft-grid bg-[#eef5ff]">
         <div className="container-custom">
           <SectionTitle title="Examination Pattern" />
           <div className="grid gap-6 md:grid-cols-3">
@@ -116,9 +116,9 @@ export default function Academics() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="rounded-2xl border border-slate-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="surface-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <h4 className="mb-2 text-xl font-bold text-[#123063]">{exam.title}</h4>
+                <h4 className="mb-2 text-xl font-bold text-[#11224d]">{exam.title}</h4>
                 <p className="text-slate-600">{exam.desc}</p>
               </motion.div>
             ))}

@@ -11,7 +11,7 @@ export default function Faculty() {
         subtitle="Experienced and dedicated educators committed to academic excellence."
       />
 
-      <section className="section-padding bg-white">
+      <section className="section-padding">
         <div className="container-custom">
           <SectionTitle title="Meet Our Teachers" subtitle="Qualified professionals nurturing future leaders" />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -22,7 +22,7 @@ export default function Faculty() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="surface-card group overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -33,7 +33,7 @@ export default function Faculty() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-bold text-[#123063]">{teacher.name}</h3>
+                  <h3 className="text-lg font-bold text-[#11224d]">{teacher.name}</h3>
                   <p className="mb-2 text-sm font-medium text-[#2e63be]">{teacher.subject}</p>
                   <div className="space-y-1 text-sm text-slate-600">
                     <p>{teacher.qualification}</p>

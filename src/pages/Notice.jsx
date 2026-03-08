@@ -12,7 +12,7 @@ export default function Notice() {
         subtitle="Stay updated with the latest announcements, schedules, and school circulars."
       />
 
-      <section className="section-padding soft-grid bg-[#F3F4F6]">
+      <section className="section-shell section-padding soft-grid bg-[#eef5ff]">
         <div className="container-custom">
           <SectionTitle title="Latest Notices" />
           <div className="mx-auto grid max-w-4xl gap-6">
@@ -23,7 +23,7 @@ export default function Notice() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className={`rounded-2xl border-l-4 bg-white p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                className={`surface-card border-l-4 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                   notice.important ? 'border-red-500' : 'border-[#2e63be]'
                 }`}
               >

@@ -10,18 +10,18 @@ export default function SectionTitle({ title, subtitle, light = false }) {
       className="mb-12 text-center"
     >
       <span
-        className={`inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider ${
-          light ? 'bg-white/20 text-blue-100' : 'bg-blue-50 text-[#2e63be]'
+        className={`inline-flex rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] ${
+          light ? 'bg-white/15 text-blue-100' : 'bg-white text-[#2450a4] shadow-sm ring-1 ring-blue-100'
         }`}
       >
         Excellence School
       </span>
-      <h2 className={`mt-4 mb-4 text-3xl font-bold md:text-4xl ${light ? 'text-white' : 'text-[#123063]'}`}>
+      <h2 className={`mt-5 mb-4 text-3xl font-bold leading-tight md:text-5xl ${light ? 'text-white' : 'text-[#11224d]'}`}>
         {title}
       </h2>
-      <div className="mx-auto h-1 w-24 rounded-full bg-gradient-to-r from-[#123063] to-[#2e63be]" />
+      <div className={`mx-auto h-1 w-24 rounded-full bg-gradient-to-r ${light ? 'from-orange-300 to-emerald-300' : 'from-[#f97316] to-[#2450a4]'}`} />
       {subtitle && (
-        <p className={`mx-auto mt-4 max-w-2xl text-base md:text-lg ${light ? 'text-blue-100' : 'text-slate-600'}`}>
+        <p className={`mx-auto mt-5 max-w-2xl text-base leading-7 md:text-lg ${light ? 'text-blue-100' : 'text-slate-600'}`}>
           {subtitle}
         </p>
       )}

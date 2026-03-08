@@ -50,7 +50,7 @@ export default function Admission() {
         subtitle="Join our learning community. Admissions are open for session 2026-27."
       />
 
-      <section className="section-padding bg-white">
+      <section className="section-padding">
         <div className="container-custom">
           <SectionTitle title="Admission Process" />
           <div className="flex flex-wrap justify-center gap-4">
@@ -61,7 +61,7 @@ export default function Admission() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="relative w-full rounded-2xl border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-48"
+                className="surface-card relative w-full p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-48"
               >
                 <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#123063] font-bold text-white">
                   {item.step}
@@ -77,14 +77,14 @@ export default function Admission() {
         </div>
       </section>
 
-      <section className="section-padding soft-grid bg-[#F3F4F6]">
+      <section className="section-shell section-padding soft-grid bg-[#eef5ff]">
         <div className="container-custom">
           <div className="grid gap-12 lg:grid-cols-2">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h3 className="mb-6 flex items-center text-2xl font-bold text-[#123063]">
                 <FaFileAlt className="mr-3" /> Required Documents
               </h3>
-              <div className="rounded-2xl bg-white p-6 shadow-md">
+              <div className="surface-card p-6">
                 <ul className="space-y-3">
                   {documents.map((doc, idx) => (
                     <li key={idx} className="flex items-center gap-3 text-slate-700">
@@ -93,7 +93,7 @@ export default function Admission() {
                     </li>
                   ))}
                 </ul>
-                <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg border-2 border-[#123063] py-3 font-semibold text-[#123063] transition-colors hover:bg-[#123063] hover:text-white">
+                <button className="secondary-btn mt-6 flex w-full justify-center gap-2 rounded-2xl border-2 border-[#123063] py-3">
                   <FaDownload /> Download Prospectus
                 </button>
               </div>
@@ -101,7 +101,7 @@ export default function Admission() {
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <h3 className="mb-6 text-2xl font-bold text-[#123063]">Fee Structure</h3>
-              <div className="overflow-x-auto rounded-2xl bg-white shadow-md">
+              <div className="surface-card overflow-x-auto">
                 <table className="w-full min-w-[420px]">
                   <thead className="bg-[#123063] text-white">
                     <tr>
@@ -126,7 +126,7 @@ export default function Admission() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      <section className="section-padding">
         <div className="container-custom max-w-2xl">
           <SectionTitle title="Online Admission Form" subtitle="Fill in the details below to apply" />
           <motion.form
@@ -134,7 +134,7 @@ export default function Admission() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit}
-            className="rounded-2xl bg-[#F3F4F6] p-8 shadow-md"
+            className="surface-card p-6 md:p-8"
           >
             <div className="space-y-4">
               <div>
@@ -142,17 +142,17 @@ export default function Admission() {
                 <input
                   type="text"
                   required
-                  className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition-all focus:border-[#2e63be] focus:ring-2 focus:ring-blue-200"
+                  className="field"
                   value={formData.studentName}
                   onChange={(e) => setFormData({ ...formData, studentName: e.target.value })}
                 />
               </div>
               <div>
-                <label className="mb-2 block font-medium text-slate-700">Father's Name *</label>
+                <label className="mb-2 block font-medium text-slate-700">Father&apos;s Name *</label>
                 <input
                   type="text"
                   required
-                  className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition-all focus:border-[#2e63be] focus:ring-2 focus:ring-blue-200"
+                  className="field"
                   value={formData.fatherName}
                   onChange={(e) => setFormData({ ...formData, fatherName: e.target.value })}
                 />
@@ -161,7 +161,7 @@ export default function Admission() {
                 <label className="mb-2 block font-medium text-slate-700">Class Applying For *</label>
                 <select
                   required
-                  className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition-all focus:border-[#2e63be] focus:ring-2 focus:ring-blue-200"
+                  className="field"
                   value={formData.class}
                   onChange={(e) => setFormData({ ...formData, class: e.target.value })}
                 >
@@ -181,7 +181,7 @@ export default function Admission() {
                   type="tel"
                   required
                   pattern="[0-9]{10}"
-                  className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition-all focus:border-[#2e63be] focus:ring-2 focus:ring-blue-200"
+                  className="field"
                   value={formData.mobile}
                   onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                 />
@@ -191,7 +191,7 @@ export default function Admission() {
                 <textarea
                   required
                   rows="3"
-                  className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition-all focus:border-[#2e63be] focus:ring-2 focus:ring-blue-200"
+                  className="field"
                   value={formData.address}
                   onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                 />

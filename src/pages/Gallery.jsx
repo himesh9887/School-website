@@ -19,9 +19,9 @@ const images = [
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const filteredImages = activeCategory === 'All' 
-    ? images 
-    : images.filter(img => img.category === activeCategory);
+  const filteredImages = activeCategory === 'All'
+    ? images
+    : images.filter((img) => img.category === activeCategory);
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -30,20 +30,19 @@ export default function Gallery() {
         subtitle="Capturing moments of learning, teamwork, creativity, and campus life."
       />
 
-      <section className="section-padding bg-white">
+      <section className="section-padding">
         <div className="container-custom">
           <SectionTitle title="School Gallery" />
-          
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
+
+          <div className="mb-10 flex flex-wrap justify-center gap-3">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
                   activeCategory === cat
-                    ? 'bg-[#1E3A8A] text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-[#1E3A8A]'
+                    ? 'bg-[#11224d] text-white shadow-lg'
+                    : 'bg-white text-gray-600 shadow-sm ring-1 ring-slate-200 hover:bg-blue-50 hover:text-[#1E3A8A]'
                 }`}
               >
                 {cat}
@@ -51,8 +50,7 @@ export default function Gallery() {
             ))}
           </div>
 
-          {/* Image Grid */}
-          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <motion.div layout className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <AnimatePresence>
               {filteredImages.map((image) => (
                 <motion.div
@@ -62,14 +60,14 @@ export default function Gallery() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
-                  className="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  className="surface-card relative group cursor-pointer overflow-hidden rounded-[1.5rem] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <div className="p-4 text-white">
                       <p className="font-semibold">{image.title}</p>
                       <p className="text-sm text-gray-300">{image.category}</p>
